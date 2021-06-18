@@ -1,4 +1,4 @@
-package com.oblessing.mediapark.screens.filterDate.state
+package com.oblessing.mediapark.screens.filter.state
 
 import com.airbnb.mvrx.MavericksState
 import com.oblessing.mediapark.model.SearchCriteria

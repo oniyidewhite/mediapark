@@ -2,6 +2,8 @@ package com.oblessing.mediapark.repository
 
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
+import com.oblessing.mediapark.database.SearchDao
+import com.oblessing.mediapark.database.SearchMapper
 import com.oblessing.mediapark.model.Article
 import com.oblessing.mediapark.network.ArticleListEntity
 import com.oblessing.mediapark.network.ArticleMapper
@@ -26,16 +28,20 @@ class ArticleRepositoryTest {
     var coroutinesTestRule = CoroutineTestRule()
 
     private lateinit var webService: WebService
-    private lateinit var mapper: ArticleMapper
+    private lateinit var networkMapper: ArticleMapper
+    private lateinit var searchMapper: SearchMapper
     private lateinit var apikey: String
+    private lateinit var searchDao: SearchDao
     private lateinit var repository: ArticleRepository
 
     @Before
     fun setUp() {
         apikey = "test"
         webService = mock()
-        mapper = ArticleMapper()
-        repository = ArticleRepository(apikey, mapper, webService)
+        searchDao = mock()
+        networkMapper = ArticleMapper()
+        searchMapper = SearchMapper()
+        repository = ArticleRepository(apikey, networkMapper, webService, searchMapper, searchDao)
     }
 
     @InternalCoroutinesApi
@@ -46,7 +52,7 @@ class ArticleRepositoryTest {
 
         whenever(webService.articles(apikey)).thenReturn(articleListEntity)
 
-        repository.fetchArticles().collect(collector = object : FlowCollector<List<Article>?>{
+        repository.fetchArticles().collect(collector = object : FlowCollector<List<Article>?> {
             override suspend fun emit(value: List<Article>?) {
                 assert(value == null)
             }
@@ -61,7 +67,7 @@ class ArticleRepositoryTest {
 
         whenever(webService.articles(apikey)).thenReturn(articleListEntity)
 
-        repository.fetchArticles().collect(collector = object : FlowCollector<List<Article>?>{
+        repository.fetchArticles().collect(collector = object : FlowCollector<List<Article>?> {
             override suspend fun emit(value: List<Article>?) {
                 assert(value != null)
             }

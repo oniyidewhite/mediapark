@@ -3,7 +3,7 @@ package com.oblessing.mediapark.di
 import com.oblessing.mediapark.core.support.AssistedViewModelFactory
 import com.oblessing.mediapark.core.support.MavericksViewModelComponent
 import com.oblessing.mediapark.core.support.ViewModelKey
-import com.oblessing.mediapark.screens.filterDate.FilterViewModel
+import com.oblessing.mediapark.screens.filter.FilterViewModel
 import com.oblessing.mediapark.screens.news.NewsListingViewModel
 import com.oblessing.mediapark.screens.search.SearchViewModel
 import dagger.Binds

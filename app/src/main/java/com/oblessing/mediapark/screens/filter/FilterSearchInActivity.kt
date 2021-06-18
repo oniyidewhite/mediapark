@@ -1,4 +1,4 @@
-package com.oblessing.mediapark.screens.filterDate
+package com.oblessing.mediapark.screens.filter
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,7 +9,7 @@ import com.airbnb.mvrx.withState
 import com.oblessing.mediapark.R
 import com.oblessing.mediapark.core.setDebounceOnClick
 import com.oblessing.mediapark.model.SearchCriteria
-import com.oblessing.mediapark.screens.filterDate.state.FilterState
+import com.oblessing.mediapark.screens.filter.state.FilterState
 import com.oblessing.mediapark.contracts.GetSearchInOptionsContract
 import com.oblessing.mediapark.databinding.ActivityFilterSearchInBinding
 import com.oblessing.mediapark.views.CheckBoxRow

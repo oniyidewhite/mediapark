@@ -17,7 +17,7 @@ object DateUtil {
             val date = simpleDateFormat.parse(value.trim())
             return date?.let {
                 SimpleDateFormat(
-                    "yyyy-MM-dd'T'HH:mm:ss.SSSZ",
+                    "yyyy-MM-dd'T'HH:mm:ss'Z'",
                     Locale.ENGLISH
                 ).format(date)
             } ?: "None"
@@ -32,7 +32,7 @@ object DateUtil {
         if (value == "None") {
             return ""
         }
-        val date = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ", Locale.ENGLISH).parse(value)
+        val date = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.ENGLISH).parse(value)
         return date?.let { simpleDateFormat.format(date) } ?: ""
     }
 }

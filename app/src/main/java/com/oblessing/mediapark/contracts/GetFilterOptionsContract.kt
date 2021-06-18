@@ -5,7 +5,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.activity.result.contract.ActivityResultContract
 import com.oblessing.mediapark.model.SearchCriteria
-import com.oblessing.mediapark.screens.filterDate.FilterActivity
+import com.oblessing.mediapark.screens.filter.FilterActivity
 
 class GetFilterOptionsContract : ActivityResultContract<SearchCriteria, SearchCriteria?>() {
     override fun createIntent(context: Context, input: SearchCriteria?): Intent {

@@ -23,10 +23,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".screens.filterDate.FilterActivity"
+            android:name=".screens.filter.FilterActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".screens.filterDate.FilterSearchInActivity"
+            android:name=".screens.filter.FilterSearchInActivity"
             android:screenOrientation="portrait" />
     </application>
 

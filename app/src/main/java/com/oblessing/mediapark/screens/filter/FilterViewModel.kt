@@ -1,10 +1,10 @@
-package com.oblessing.mediapark.screens.filterDate
+package com.oblessing.mediapark.screens.filter
 
 import com.airbnb.mvrx.MavericksViewModel
 import com.airbnb.mvrx.MavericksViewModelFactory
 import com.oblessing.mediapark.core.support.AssistedViewModelFactory
 import com.oblessing.mediapark.core.support.hiltMavericksViewModelFactory
-import com.oblessing.mediapark.screens.filterDate.state.FilterState
+import com.oblessing.mediapark.screens.filter.state.FilterState
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
