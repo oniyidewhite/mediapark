@@ -5,6 +5,7 @@ import com.nhaarman.mockitokotlin2.whenever
 import com.oblessing.mediapark.database.SearchDao
 import com.oblessing.mediapark.database.SearchMapper
 import com.oblessing.mediapark.model.Article
+import com.oblessing.mediapark.model.SearchCriteria
 import com.oblessing.mediapark.network.ArticleListEntity
 import com.oblessing.mediapark.network.ArticleMapper
 import com.oblessing.mediapark.network.WebService
@@ -68,6 +69,21 @@ class ArticleRepositoryTest {
         whenever(webService.articles(apikey)).thenReturn(articleListEntity)
 
         repository.fetchArticles().collect(collector = object : FlowCollector<List<Article>?> {
+            override suspend fun emit(value: List<Article>?) {
+                assert(value != null)
+            }
+        })
+    }
+
+    @InternalCoroutinesApi
+    @ExperimentalCoroutinesApi
+    @Test
+    fun `search articles should data if request successful`() = runBlockingTest {
+        val articleListEntity = ArticleListEntity(0, listOf())
+
+        whenever(webService.search("q", "q", "q", "q", "q" ,apikey)).thenReturn(articleListEntity)
+
+        repository.findArticles(SearchCriteria("q", "q", "q", "q", "q")).collect(collector = object : FlowCollector<List<Article>?> {
             override suspend fun emit(value: List<Article>?) {
                 assert(value != null)
             }
