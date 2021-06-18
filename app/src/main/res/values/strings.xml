@@ -1,0 +1,25 @@
+<resources>
+    <string name="label_search">Search</string>
+    <string name="label_news">News</string>
+    <string name="error_message">Unexpected error occured, Try again later</string>
+    <string name="label_retry">Retry</string>
+    <string name="label_logo">Logo</string>
+    <string name="hint_search">Search</string>
+    <string name="label_history">Search History</string>
+    <string name="label_sort_by">Sort By</string>
+    <string name="label_upload_date">Upload date</string>
+    <string name="label_relevance">Relevance</string>
+    <string name="label_9">9</string>
+    <string name="label_clear">Clear</string>
+    <string name="label_apply_filter">Apply filter</string>
+    <string name="label_filter">Filter</string>
+    <string name="label_date">Date</string>
+    <string name="label_from">From</string>
+    <string name="label_to">To</string>
+    <string name="label_search_in">Search In</string>
+    <string name="hint_title_content_description">title,content,description</string>
+    <string name="label_apply">Apply</string>
+    <string name="label_title">Title</string>
+    <string name="label_description">Description</string>
+    <string name="label_content">Content</string>
+</resources>

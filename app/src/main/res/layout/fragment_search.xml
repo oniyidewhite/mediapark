@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.airbnb.epoxy.EpoxyRecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/container" />
+
+    <View
+        android:id="@+id/container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/app_bar"
+        app:layout_constraintBottom_toBottomOf="@id/input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/materialTextView"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:text="@string/label_logo"
+        android:textColor="@color/teal_200"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/input"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/search_input"
+        android:drawableStart="@drawable/ic_baseline_search_24"
+        android:drawablePadding="8dp"
+        android:hint="@string/hint_search"
+        android:imeOptions="actionDone"
+        android:paddingStart="8dp"
+        android:singleLine="true"
+        android:textColor="@color/text_color"
+        app:layout_constraintBottom_toBottomOf="@+id/filter"
+        app:layout_constraintEnd_toStartOf="@+id/filter"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="RtlSymmetry" />
+
+    <FrameLayout
+        android:id="@+id/filter"
+        android:layout_width="36dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toStartOf="@+id/sortBy"
+        app:layout_constraintTop_toBottomOf="@+id/materialTextView">
+
+        <ImageView
+            android:id="@+id/filterImage"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/filter_background"
+            android:padding="8dp"
+            android:src="@drawable/ic_outline_filter_alt_24" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/filter_options_counter"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="end"
+            android:background="@drawable/round_badge"
+            android:gravity="center"
+            android:text="@string/label_9"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/filter"
+            tools:visibility="visible" />
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/sortBy"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="16dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/filter_background"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="8dp"
+        android:src="@drawable/ic_baseline_sort_24"
+        app:layout_constraintBottom_toBottomOf="@+id/filter"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/inputs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:barrierMargin="16dp"
+        app:constraint_referenced_ids="filter, input, sortBy" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/recyclerView" />
+</androidx.constraintlayout.widget.ConstraintLayout>
