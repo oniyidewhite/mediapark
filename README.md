@@ -6,6 +6,8 @@
 >- Epoxy: Allows me to build complex ui easily on recyclerView
 >- Navigation: Android arch components for navigation
 >- Mockito: Unit testing library
+>- Browser: Custom Tab to load urls.
+>- Room: Used this to store search history.
 >- Apollo Graphql to connect to my my webservice. endpoint to webservice: https://test-filtering-matches.herokuapp.com/
 
 **Other Information**
