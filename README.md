@@ -8,7 +8,6 @@
 >- Mockito: Unit testing library
 >- Browser: Custom Tab to load urls.
 >- Room: Used this to store search history.
->- Apollo Graphql to connect to my my webservice. endpoint to webservice: https://test-filtering-matches.herokuapp.com/
 
 **Other Information**
 >- API documentation: https://gnews.io/docs/v4#introduction, 
